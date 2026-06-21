@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATCHÉ × Cookies — Own the Block</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#04102b; --navy2:#0a1c41; --blue:#1a73e8; --blue-bright:#5b9dff; --ice:#cfe0ff; --line:rgba(91,157,255,.2); --white:#f4f8ff; --muted:#8ea3cf;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-weight:700;letter-spacing:.28em;text-transform:uppercase;font-size:11px;color:var(--blue-bright)}
+  h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.02}
+  .grad{background:linear-gradient(100deg,var(--blue-bright),#9db8ff 60%,var(--blue-bright));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  /* HERO */
+  .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;padding-bottom:8vh}
+  .hero .bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+  .hero .bg img{width:100%;height:115%;object-fit:cover;object-position:center 35%;will-change:transform}
+  .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(6,15,38,.55) 0%,rgba(6,15,38,.2) 35%,rgba(6,15,38,.75) 75%,var(--navy) 100%),radial-gradient(900px 480px at 70% 110%,rgba(31,92,240,.45),transparent 60%)}
+  .hero .inner{position:relative;z-index:2}
+  .hero h1{font-size:clamp(42px,8vw,86px);margin:18px 0 0}
+  .hero .sub{font-size:clamp(16px,2.4vw,21px);color:var(--ice);max-width:620px;margin-top:22px;font-weight:400}
+  .hero .scrolltip{margin-top:34px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright)}
+
+  section{padding:9vh 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(28px,5vw,48px)}
+  .lead{font-size:clamp(17px,2.4vw,20px);color:var(--ice);margin-top:18px;max-width:680px;font-weight:400}
+  p{margin-top:14px;color:#c7d5f2}
+
+  .lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+  .lane{background:linear-gradient(180deg,var(--navy2),#081230);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+  .lane .ph{aspect-ratio:4/5;overflow:hidden;position:relative}
+  .lane .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s cubic-bezier(.16,1,.3,1)}
+  .lane:hover .ph img{transform:scale(1.06)}
+  .lane .body{padding:22px 22px 26px}
+  .lane h3{font-size:20px;color:var(--white)}
+  .lane .n{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--blue-bright)}
+  .lane p{font-size:14.5px;margin-top:8px;color:#b9c8ea}
+
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;margin-top:30px}
+  .split .imgwrap{border-radius:18px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5}
+  .split .imgwrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+  .proofcard{background:linear-gradient(160deg,rgba(31,92,240,.22),#081230 60%);border:1px solid var(--line);border-radius:18px;padding:30px 28px;margin-top:8px}
+  .proofcard .big{font-size:clamp(22px,3vw,28px);font-weight:800;color:var(--white);line-height:1.15}
+  .proofcard p{font-size:15px}
+  ul.clean{list-style:none;display:grid;gap:13px;margin-top:22px}
+  ul.clean li{padding-left:28px;position:relative;font-size:16px;color:#d2dff7}
+  ul.clean li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:2px;background:var(--blue-bright);box-shadow:0 0 14px rgba(91,140,255,.8)}
+  ul.clean li b{color:var(--white);font-weight:700}
+
+  .cta{text-align:center;padding:12vh 0}
+  .cta h2{font-size:clamp(30px,6vw,58px)}
+  .cta .line{font-size:18px;color:var(--ice);margin-top:18px;font-weight:400}
+  .btn{display:inline-block;margin-top:30px;background:var(--blue);color:#fff;font-weight:700;font-size:16px;letter-spacing:.02em;padding:17px 38px;border-radius:100px;text-decoration:none;box-shadow:0 14px 40px -12px rgba(31,92,240,.8);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 20px 50px -12px rgba(31,92,240,.95)}
+  .sig{margin-top:34px;font-size:14px;color:var(--muted)}
+  footer{padding:30px 0 60px;text-align:center;color:#5d6f97;font-size:12px;border-top:1px solid var(--line)}
+
+  /* FRAMER-STYLE MOTION */
+  @media (prefers-reduced-motion:no-preference){
+    .rv{opacity:0;transform:translateY(42px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+    .rv.in{opacity:1;transform:none}
+    .clip img{transform:scale(1.18)}
+    .clip.in img{transform:scale(1)}
+    .hero h1,.hero .sub,.hero .eyebrow,.hero .scrolltip{opacity:0;transform:translateY(30px);animation:rise 1.1s cubic-bezier(.16,1,.3,1) forwards}
+    .hero .eyebrow{animation-delay:.1s}.hero h1{animation-delay:.22s}.hero .sub{animation-delay:.4s}.hero .scrolltip{animation-delay:.58s}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
+  @media (max-width:760px){.lanes{grid-template-columns:1fr}.split{grid-template-columns:1fr;gap:24px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="bg"><img id="heroImg" src="https://d8j0ntlcm91z4.cloudfront.net/user_38UuuwPAyCC1aFyPsNUyccdEuZD/hf_20260621_131837_8a684da8-be9c-4dfa-8e4b-977688f2ecc6_min.webp" alt="Streetwear community on the block"></div>
+  <div class="scrim"></div>
+  <div class="inner wrap">
+    <div class="eyebrow">For Cookies · prepared by ATCHÉ</div>
+    <h1>Make Cookies the name<br>the whole block <span class="grad">moves around.</span></h1>
+    <p class="sub">You can't market a dispensary like everyone else — so let's stop trying. We grow it the only way that actually works: community.</p>
+    <div class="scrolltip">↓ here's the play</div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">The gap</div>
+    <h2 class="rv">Ads are off the table. <span class="grad">Culture isn't.</span></h2>
+    <p class="lead rv">Instagram and TikTok ban cannabis promotion — they'll wipe the page. Agencies either can't touch you or get you banned. The brands that win in this space win on <b style="color:var(--white)">events, faces, and a community that shows up.</b> That's the whole lane. That's exactly what I build.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">What I bring</div>
+    <h2 class="rv">Three lanes. None of them get you banned.</h2>
+    <div class="lanes">
+      <div class="lane rv">
+        <div class="ph clip"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_38UuuwPAyCC1aFyPsNUyccdEuZD/hf_20260621_131840_d31016de-3532-46af-bc74-4c78fbc39c65_min.webp" alt="Community block event"></div>
+        <div class="body"><div class="n">01</div><h3>Events &amp; activations</h3><p>Ambassador-hosted nights, drops, and block-party energy that pull a real crowd through your door.</p></div>
+      </div>
+      <div class="lane rv">
+        <div class="ph clip"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_38UuuwPAyCC1aFyPsNUyccdEuZD/hf_20260621_131839_01295249-a8c2-4798-b19d-0647ae4c521a_min.webp" alt="Streetwear lifestyle face"></div>
+        <div class="body"><div class="n">02</div><h3>Lifestyle content</h3><p>Your culture and your fits, repped by real faces. Fully postable, fully on-brand, never flagged.</p></div>
+      </div>
+      <div class="lane rv">
+        <div class="ph clip"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_38UuuwPAyCC1aFyPsNUyccdEuZD/hf_20260621_131837_8a684da8-be9c-4dfa-8e4b-977688f2ecc6_min.webp" alt="Crew on the corner"></div>
+        <div class="body"><div class="n">03</div><h3>Community &amp; list</h3><p>Every activation grows your SMS list and ties Cookies to every spot worth knowing on the strip.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">The proof — July 11</div>
+    <h2 class="rv">A low-risk trial. <span class="grad">Let me run your anniversary.</span></h2>
+    <div class="split">
+      <div>
+        <p class="lead rv" style="margin-top:8px">I bring the women, the partner next door (Spicy Water feeds the crowd), the content, and the tracking. You see the foot traffic and the signups <b style="color:var(--white)">before</b> you commit to anything ongoing.</p>
+        <ul class="clean">
+          <li class="rv"><b>Cross-traffic engine</b> — a receipt offer with the food spot next door fills both rooms.</li>
+          <li class="rv"><b>List growth</b> — capture signups on-site, your real channel.</li>
+          <li class="rv"><b>Real numbers</b> — foot traffic + redemptions vs. a normal day, in writing.</li>
+          <li class="rv"><b>A month of content</b> — shot in one night.</li>
+        </ul>
+        <div class="proofcard rv" style="margin-top:24px">
+          <div class="big">The trial — $1,200</div>
+          <p>One activation, fully produced. A <b style="color:var(--white)">$600 deposit</b> books July 11; balance on delivery. Lock the monthly during the activation and the <b style="color:var(--white)">$1,200 credits toward month one</b> — so the proof basically pays for itself.</p>
+        </div>
+      </div>
+      <div class="imgwrap clip rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_38UuuwPAyCC1aFyPsNUyccdEuZD/hf_20260621_131839_01295249-a8c2-4798-b19d-0647ae4c521a_min.webp" alt="Cookies lifestyle"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">Why me</div>
+    <h2 class="rv">The curator you've been looking for.</h2>
+    <p class="lead rv">Not someone who posts — someone who actually <b style="color:var(--white)">forms the partnerships.</b> I'm on the strip every weekend. I've got the women — paid and protected. And I'm already wiring the whole corridor together. I grow you clean: no banned pages, no faceless content, no chasing tails. Cookies becomes the brand the neighborhood moves around.</p>
+  </div>
+</section>
+
+<div class="cta wrap">
+  <h2 class="rv">Let's lock July 11.<br><span class="grad">Then let's build the block.</span></h2>
+  <div class="line rv">One night to prove it. No commitment until you've seen the numbers.</div>
+  <a class="btn rv" href="mailto:thedigitalmarxman@gmail.com">Start the conversation →</a>
+  <div class="sig rv">Xavier Snow · ATCHÉ · @atcheofficial · thedigitalmarxman@gmail.com</div>
+</div>
+
+<footer>ATCHÉ — community-first creative for the culture.</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(!reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    },{threshold:.16, rootMargin:'0px 0px -8% 0px'});
+    document.querySelectorAll('.rv,.clip').forEach(function(el,i){
+      // gentle stagger within sibling groups
+      var sibs = el.parentElement ? [].slice.call(el.parentElement.children).filter(function(c){return c.classList.contains('rv');}) : [];
+      var idx = sibs.indexOf(el);
+      if(idx>0) el.style.transitionDelay = (idx*0.08)+'s';
+      io.observe(el);
+    });
+    // hero parallax
+    var hi = document.getElementById('heroImg');
+    if(hi) window.addEventListener('scroll',function(){
+      var y = window.pageYOffset;
+      if(y < window.innerHeight) hi.style.transform = 'translateY('+(y*0.18)+'px)';
+    },{passive:true});
+  }
+})();
+</script>
+</body>
+</html>

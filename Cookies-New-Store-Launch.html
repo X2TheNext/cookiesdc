@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATCHÉ × Cookies — Launch the New Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#04102b; --navy2:#0a1c41; --blue:#1a73e8; --blue-bright:#5b9dff; --ice:#cfe0ff; --line:rgba(91,157,255,.2); --white:#f4f8ff; --muted:#8ea3cf;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-weight:700;letter-spacing:.28em;text-transform:uppercase;font-size:11px;color:var(--blue-bright)}
+  h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.02}
+  .grad{background:linear-gradient(100deg,var(--blue-bright),#9db8ff 60%,var(--blue-bright));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;padding-bottom:8vh}
+  .hero .bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+  .hero .bg img{width:100%;height:115%;object-fit:cover;object-position:center 40%;will-change:transform}
+  .hero .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(4,16,43,.5) 0%,rgba(4,16,43,.2) 35%,rgba(4,16,43,.78) 75%,var(--navy) 100%),radial-gradient(900px 480px at 30% 110%,rgba(26,115,232,.45),transparent 60%)}
+  .hero .inner{position:relative;z-index:2}
+  .hero h1{font-size:clamp(42px,8vw,86px);margin:18px 0 0}
+  .hero .sub{font-size:clamp(16px,2.4vw,21px);color:var(--ice);max-width:640px;margin-top:22px;font-weight:400}
+  .hero .scrolltip{margin-top:34px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-bright)}
+
+  section{padding:9vh 0;border-top:1px solid var(--line)}
+  h2{font-size:clamp(28px,5vw,48px)}
+  .lead{font-size:clamp(17px,2.4vw,20px);color:var(--ice);margin-top:18px;max-width:700px;font-weight:400}
+  p{margin-top:14px;color:#c7d5f2}
+
+  .phases{display:grid;gap:16px;margin-top:46px}
+  .phase{display:grid;grid-template-columns:90px 1fr;gap:22px;align-items:start;background:linear-gradient(180deg,var(--navy2),#081230);border:1px solid var(--line);border-radius:18px;padding:26px 26px}
+  .phase .tag{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--blue-bright)}
+  .phase .num{font-size:40px;font-weight:900;color:rgba(91,157,255,.45);line-height:1}
+  .phase h3{font-size:21px;color:var(--white);margin-bottom:4px}
+  .phase p{font-size:14.5px;margin-top:6px;color:#b9c8ea}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:30px}
+  .split .imgwrap{border-radius:18px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5}
+  .split .imgwrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+  ul.clean{list-style:none;display:grid;gap:13px;margin-top:22px}
+  ul.clean li{padding-left:28px;position:relative;font-size:16px;color:#d2dff7}
+  ul.clean li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:2px;background:var(--blue-bright);box-shadow:0 0 14px rgba(91,157,255,.8)}
+  ul.clean li b{color:var(--white);font-weight:700}
+
+  .pricecard{background:linear-gradient(160deg,rgba(26,115,232,.22),#081230 60%);border:1px solid var(--line);border-radius:18px;padding:32px 30px;margin-top:30px}
+  .pricecard .big{font-family:'Inter';font-size:clamp(30px,5vw,46px);font-weight:900;color:var(--white);line-height:1}
+  .pricecard .big span{font-size:16px;color:var(--muted);font-weight:500}
+  .pricecard p{font-size:15px}
+
+  .cta{text-align:center;padding:12vh 0}
+  .cta h2{font-size:clamp(30px,6vw,58px)}
+  .cta .line{font-size:18px;color:var(--ice);margin-top:18px;font-weight:400}
+  .btn{display:inline-block;margin-top:30px;background:var(--blue);color:#fff;font-weight:700;font-size:16px;letter-spacing:.02em;padding:17px 38px;border-radius:100px;text-decoration:none;box-shadow:0 14px 40px -12px rgba(26,115,232,.85);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 20px 50px -12px rgba(26,115,232,1)}
+  .sig{margin-top:34px;font-size:14px;color:var(--muted)}
+  footer{padding:30px 0 60px;text-align:center;color:#5d6f97;font-size:12px;border-top:1px solid var(--line)}
+
+  @media (prefers-reduced-motion:no-preference){
+    .rv{opacity:0;transform:translateY(42px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+    .rv.in{opacity:1;transform:none}
+    .clip img{transform:scale(1.18)}
+    .clip.in img{transform:scale(1)}
+    .hero h1,.hero .sub,.hero .eyebrow,.hero .scrolltip{opacity:0;transform:translateY(30px);animation:rise 1.1s cubic-bezier(.16,1,.3,1) forwards}
+    .hero .eyebrow{animation-delay:.1s}.hero h1{animation-delay:.22s}.hero .sub{animation-delay:.4s}.hero .scrolltip{animation-delay:.58s}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
+  @media (max-width:760px){.split{grid-template-columns:1fr;gap:24px}.phase{grid-template-columns:60px 1fr;gap:16px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="bg"><img id="heroImg" src="https://d8j0ntlcm91z4.cloudfront.net/user_38UuuwPAyCC1aFyPsNUyccdEuZD/hf_20260621_131837_8a684da8-be9c-4dfa-8e4b-977688f2ecc6_min.webp" alt="Launch crowd"></div>
+  <div class="scrim"></div>
+  <div class="inner wrap">
+    <div class="eyebrow">For Cookies · the new location · prepared by ATCHÉ</div>
+    <h1>Don't just open a store.<br><span class="grad">Launch a moment.</span></h1>
+    <p class="sub">A new location gets one first impression. The spots that make it open with firepower — a crowd, a buzz, a community already waiting. The ones that soft-open quietly are the ones that close quietly. Let's make sure yours opens loud.</p>
+    <div class="scrolltip">↓ the launch plan</div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">Why ground-up wins</div>
+    <h2 class="rv">The community should be there <span class="grad">before the doors are.</span></h2>
+    <p class="lead rv">Most stores open, then try to find their crowd. We flip it: we build the hype, the faces, and the list <b style="color:var(--white)">in the weeks before you open</b>, so day one already has a line. Retrofitting a quiet store is expensive. Launching one with momentum is how you win the neighborhood from the jump.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">The launch, in three phases</div>
+    <h2 class="rv">From paper to packed.</h2>
+    <div class="phases">
+      <div class="phase rv"><div class="num">01</div><div><div class="tag">PRE-LAUNCH · 3–4 WEEKS OUT</div><h3>Build the anticipation</h3><p>Teaser content, the ambassador roster, casting the faces, and a "coming soon" campaign across owned and compliant channels. Start the SMS list before day one. Lock the corridor partners.</p></div></div>
+      <div class="phase rv"><div class="num">02</div><div><div class="tag">GRAND OPENING · DAY ONE</div><h3>Open loud</h3><p>An ambassador-hosted grand-opening activation — a real event, a real crowd, a line worth filming. Cross-promo with neighbor businesses funnels traffic in. We shoot the whole thing.</p></div></div>
+      <div class="phase rv"><div class="num">03</div><div><div class="tag">FIRST 90 DAYS · MOMENTUM</div><h3>Keep it moving</h3><p>A monthly content engine, recurring activations, and the community + list growing — so the opening buzz becomes regulars, not a one-night spike.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">What you get</div>
+    <h2 class="rv">A store that opens with a following.</h2>
+    <div class="split">
+      <div>
+        <ul class="clean">
+          <li class="rv"><b>A pre-launch hype campaign</b> — content + community before you open</li>
+          <li class="rv"><b>A grand-opening event</b> — ambassadors, crowd, cross-promo</li>
+          <li class="rv"><b>A full content library</b> — the space, the fits, the faces</li>
+          <li class="rv"><b>An SMS / community list</b> built from day one</li>
+          <li class="rv"><b>The corridor wired in</b> — partners driving traffic from the start</li>
+          <li class="rv"><b>Real numbers</b> — foot traffic, signups, attendance</li>
+        </ul>
+      </div>
+      <div class="imgwrap clip rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_38UuuwPAyCC1aFyPsNUyccdEuZD/hf_20260621_131840_d31016de-3532-46af-bc74-4c78fbc39c65_min.webp" alt="Grand opening energy"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">The investment</div>
+    <h2 class="rv">Launch firepower, <span class="grad">priced as a project.</span></h2>
+    <div class="pricecard rv">
+      <div class="big">Launch package — from $5,000<span> · pre-launch + grand opening + first month</span></div>
+      <p>Covers the full pre-launch campaign, the grand-opening activation, and the first month of content and community build. Rolls into a monthly partnership to hold the momentum. Scope and price set together once we know the location and timeline.</p>
+    </div>
+    <p class="rv" style="margin-top:18px;color:var(--muted);font-size:14px">Want proof before the buildout? July 11 at the current spot is the low-risk trial that shows exactly what this looks like.</p>
+  </div>
+</section>
+
+<div class="cta wrap">
+  <h2 class="rv">Let's open it <span class="grad">loud.</span></h2>
+  <div class="line rv">Bring me in early. The earlier we start, the bigger day one is.</div>
+  <a class="btn rv" href="mailto:thedigitalmarxman@gmail.com">Plan the launch →</a>
+  <div class="sig rv">Xavier Snow · ATCHÉ · @atcheofficial · thedigitalmarxman@gmail.com</div>
+</div>
+
+<footer>ATCHÉ — community-first creative for the culture.</footer>
+
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.16, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv,.clip').forEach(function(el){
+    var sibs = el.parentElement ? [].slice.call(el.parentElement.children).filter(function(c){return c.classList.contains('rv');}) : [];
+    var idx = sibs.indexOf(el);
+    if(idx>0) el.style.transitionDelay = (idx*0.08)+'s';
+    io.observe(el);
+  });
+  var hi = document.getElementById('heroImg');
+  if(hi) window.addEventListener('scroll',function(){ var y=window.pageYOffset; if(y<window.innerHeight) hi.style.transform='translateY('+(y*0.18)+'px)'; },{passive:true});
+})();
+</script>
+</body>
+</html>
